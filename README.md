@@ -7,7 +7,7 @@ The Async/Await pattern for Elixir! For those who prefer this:
 def MyModule do
   use Async
 
-  def my_function
+  def my_function do
     expensive_result = async OtherModule.expensive_operation(arg1, arg2)
     lots_of_counting = async for num <- 1..10_000_000, do: num * 2
     # ...
@@ -23,7 +23,7 @@ To this:
 def MyModule do
   import Task, only: [await: 1, async: 3, async: 1]
 
-  def my_function
+  def my_function do
     expensive_result = async OtherModule, :expensive_operation, [arg1, arg2]
     lots_of_counting = async fn -> for num <- 1..10_000_000, do: num * 2 end
     # ...
