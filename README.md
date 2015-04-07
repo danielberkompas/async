@@ -48,6 +48,8 @@ defp deps do
 end
 ```
 
+Then run `mix deps.get` to install.
+
 ## License
 
 MIT.
